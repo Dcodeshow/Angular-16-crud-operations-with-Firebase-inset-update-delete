@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 20px;
+}
+
+/* Styling for the container */
+.container {
+  max-width: 1200px;
+}
+
+/* Card styling */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover Effects */
+button {
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+/* Table Styling */
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Form Input Styling */
+.form-control {
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+/* Spinner */
+.spinner-border {
+  width: 2rem;
+  height: 2rem;
+  border-width: 4px;
+}

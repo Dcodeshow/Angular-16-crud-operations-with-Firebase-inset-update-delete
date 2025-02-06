@@ -1,0 +1,117 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="card shadow-lg rounded-lg">
+        <div class="card-header text-center bg-primary text-white">
+          <h3>Manage Products</h3>
+        </div>
+        <div class="card-body bg-light p-4">
+          <div class="row">
+            <div class="col-md-5">
+              <h4 class="text-primary">Add Product</h4>
+              <form
+                (ngSubmit)="onClick(proid.value, proname.value, proprice.value)"
+              >
+                <div class="mb-3">
+                  <label for="proid" class="form-label">Product ID</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="proid"
+                    ngModel
+                    #proid
+                    required
+                    placeholder="Enter Product ID"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="proname" class="form-label">Product Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="proname"
+                    ngModel
+                    #proname
+                    required
+                    placeholder="Enter Product Name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="proprice" class="form-label">Product Price</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="proprice"
+                    ngModel
+                    #proprice
+                    required
+                    placeholder="Enter Product Price"
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 mb-3">
+                  {{ editMode ? "Update Product" : "Add Product" }}
+                </button>
+                <div class="d-flex justify-content-between">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="saveData()"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-info"
+                    (click)="fetchData()"
+                  >
+                    Fetch
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Product List -->
+            <div class="col-md-7">
+              <h4 class="text-primary">{{ proTitle | async }}</h4>
+              <table class="table table-hover table-striped table-bordered">
+                <thead class="table-dark">
+                  <tr>
+                    <th>#</th>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="!expression">
+                  <tr *ngFor="let item of productList; index as i">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ item.proid }}</td>
+                    <td>{{ item.proname }}</td>
+                    <td>{{ item.proprice | currency }}</td>
+                    <td>
+                      <button (click)="onEdit(i)" class="btn btn-warning">
+                        Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button (click)="onDelete(i)" class="btn btn-danger">
+                        X
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 *ngIf="expression" class="text-center">
+                <div class="spinner-border text-primary"></div>
+                Fetching Data...
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

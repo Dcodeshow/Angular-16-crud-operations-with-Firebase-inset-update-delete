@@ -1,0 +1,90 @@
+[debug] [2023-11-10T06:31:34.473Z] ----------------------------------------------------------------------
+[debug] [2023-11-10T06:31:34.476Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-11-10T06:31:34.476Z] CLI Version:   12.8.1
+[debug] [2023-11-10T06:31:34.476Z] Platform:      win32
+[debug] [2023-11-10T06:31:34.476Z] Node Version:  v18.10.0
+[debug] [2023-11-10T06:31:34.477Z] Time:          Fri Nov 10 2023 12:01:34 GMT+0530 (India Standard Time)
+[debug] [2023-11-10T06:31:34.477Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-10T06:31:34.484Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-10T06:31:34.485Z] > authorizing via signed-in user (nawazkhan4032@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Acer\Desktop\Practice\angular-10sep
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-11-10T06:34:53.373Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-11-10T06:34:55.538Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-11-10T06:34:55.538Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project userdata-nwz (UserData) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2023-11-10T06:35:23.113Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-11-10T06:35:23.114Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/userdata-nwz
+[debug] [2023-11-10T06:35:24.974Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com 200
+[debug] [2023-11-10T06:35:24.974Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com [omitted]
+[warn] !  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2023-11-10T06:35:24.978Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com:enable [none]
+[debug] [2023-11-10T06:35:24.978Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/userdata-nwz
+[debug] [2023-11-10T06:35:26.956Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com:enable 200
+[debug] [2023-11-10T06:35:26.956Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com:enable [omitted]
+[debug] [2023-11-10T06:35:36.959Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com [none]
+[debug] [2023-11-10T06:35:36.960Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/userdata-nwz
+[debug] [2023-11-10T06:35:38.731Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com 200
+[debug] [2023-11-10T06:35:38.731Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/userdata-nwz/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2023-11-10T06:35:38.740Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/userdata-nwz [none]
+[debug] [2023-11-10T06:35:39.153Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/userdata-nwz 200
+[debug] [2023-11-10T06:35:39.154Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/userdata-nwz {"projectId":"userdata-nwz","projectNumber":"231507537668","displayName":"UserData","name":"projects/userdata-nwz","resources":{"hostingSite":"userdata-nwz"},"state":"ACTIVE","etag":"1_62871177-5aaf-4dcc-b00f-708c9bbbe774"}
+[debug] [2023-11-10T06:35:58.770Z] >>> [apiv2][query] POST https://firebasedatabase.googleapis.com/v1beta/projects/userdata-nwz/locations/us-central1/instances databaseId=userdata-nwz-default-rtdb&validateOnly=true
+[debug] [2023-11-10T06:35:58.770Z] >>> [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/userdata-nwz/locations/us-central1/instances {"type":"default_database"}
+[debug] [2023-11-10T06:36:00.675Z] <<< [apiv2][status] POST https://firebasedatabase.googleapis.com/v1beta/projects/userdata-nwz/locations/us-central1/instances 200
+[debug] [2023-11-10T06:36:00.676Z] <<< [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/userdata-nwz/locations/us-central1/instances {"name":"projects/231507537668/locations/us-central1/instances/userdata-nwz-default-rtdb","project":"projects/231507537668","databaseUrl":"https://userdata-nwz-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[debug] [2023-11-10T06:36:00.678Z] >>> [apiv2][query] POST https://firebasedatabase.googleapis.com/v1beta/projects/userdata-nwz/locations/us-central1/instances databaseId=userdata-nwz-default-rtdb
+[debug] [2023-11-10T06:36:00.678Z] >>> [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/userdata-nwz/locations/us-central1/instances {"type":"default_database"}
+[debug] [2023-11-10T06:36:02.748Z] <<< [apiv2][status] POST https://firebasedatabase.googleapis.com/v1beta/projects/userdata-nwz/locations/us-central1/instances 200
+[debug] [2023-11-10T06:36:02.748Z] <<< [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/userdata-nwz/locations/us-central1/instances {"name":"projects/231507537668/locations/us-central1/instances/userdata-nwz-default-rtdb","project":"projects/231507537668","databaseUrl":"https://userdata-nwz-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2023-11-10T06:36:16.759Z] >>> [apiv2][query] GET https://userdata-nwz-default-rtdb.firebaseio.com/.settings/rules.json [none]
+[debug] [2023-11-10T06:36:17.653Z] <<< [apiv2][status] GET https://userdata-nwz-default-rtdb.firebaseio.com/.settings/rules.json 200
+[debug] [2023-11-10T06:36:17.653Z] <<< [apiv2][body] GET https://userdata-nwz-default-rtdb.firebaseio.com/.settings/rules.json [stream]
+[info] +  Database Rules for userdata-nwz-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2023-11-10T06:36:33.950Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2023-11-10T06:36:34.119Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2023-11-10T06:36:34.119Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.6.0","browserURL":"https://www.gstatic.com/firebasejs/10.6.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.6.0/firebase.tgz"},"live":{"version":"10.6","browserURL":"https://www.gstatic.com/firebasejs/live/10.6/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.6/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.6.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.6.0/firebase-auth/cordova.js","functions":"https://www.gstatic.com/firebasejs/10.6.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.6.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.6.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.6.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.6.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.6.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Detected a .git folder at C:\Users\Acer\Desktop\Practice\angular-10sep 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=291307615&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
