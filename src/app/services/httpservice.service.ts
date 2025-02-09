@@ -7,25 +7,28 @@ import { ProductModalInerface } from '../Modal/productModal';
   providedIn: 'root',
 })
 export class HttpserviceService {
-  constructor(private http: HttpClient) {}
-
-  header: HttpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json/nawaz',
-  });
-
   url: string = 'https://crudoperation-c1c14-default-rtdb.firebaseio.com/';
 
-  submitData(productData: ProductModalInerface[]): Observable<any> {
-    return this.http.put(`${this.url}products.json`, productData, {
-      headers: this.header,
-    });
+  constructor(private http: HttpClient) {}
+
+  postData(productData: ProductModalInerface[]): Observable<any> {
+    return this.http.post<ProductModalInerface>(
+      `${this.url}/product.json`,
+      productData
+    );
   }
 
-  fetchData(): Observable<any> {
-    return this.http.get(`${this.url}products.json`);
+  getData(): Observable<any> {
+    return this.http.get<ProductModalInerface>(`${this.url}/product.json`);
   }
 
-  fetchproductTitle(): Observable<any> {
-    return this.http.get(`${this.url}productTitle.json`);
+  productTitle(): Observable<string> {
+    return this.http.get<string>(`${this.url}/productTitle.json`);
+  }
+
+  deleteData(userID: any): Observable<any> {
+    return this.http.delete<ProductModalInerface>(
+      `${this.url}/product/${userID}.json`
+    );
   }
 }

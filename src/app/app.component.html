@@ -9,19 +9,16 @@
           <div class="row">
             <div class="col-md-5">
               <h4 class="text-primary">Add Product</h4>
-              <form
-                (ngSubmit)="onClick(proid.value, proname.value, proprice.value)"
-              >
+              <form (ngSubmit)="onSubmit()" [formGroup]="myReactiveForm">
                 <div class="mb-3">
                   <label for="proid" class="form-label">Product ID</label>
                   <input
                     type="text"
                     class="form-control"
                     name="proid"
-                    ngModel
-                    #proid
                     required
                     placeholder="Enter Product ID"
+                    formControlName="proid"
                   />
                 </div>
                 <div class="mb-3">
@@ -30,10 +27,9 @@
                     type="text"
                     class="form-control"
                     name="proname"
-                    ngModel
-                    #proname
                     required
                     placeholder="Enter Product Name"
+                    formControlName="proname"
                   />
                 </div>
                 <div class="mb-3">
@@ -42,38 +38,21 @@
                     type="number"
                     class="form-control"
                     name="proprice"
-                    ngModel
-                    #proprice
                     required
                     placeholder="Enter Product Price"
+                    formControlName="proprice"
                   />
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 mb-3">
-                  {{ editMode ? "Update Product" : "Add Product" }}
+                  Save Product
                 </button>
-                <div class="d-flex justify-content-between">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    (click)="saveData()"
-                  >
-                    Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-info"
-                    (click)="fetchData()"
-                  >
-                    Fetch
-                  </button>
-                </div>
               </form>
             </div>
 
             <!-- Product List -->
             <div class="col-md-7">
-              <h4 class="text-primary">{{ proTitle | async }}</h4>
+              <h4 class="text-primary">{{ Title | async }}</h4>
               <table class="table table-hover table-striped table-bordered">
                 <thead class="table-dark">
                   <tr>
@@ -85,29 +64,31 @@
                     <th>Delete</th>
                   </tr>
                 </thead>
-                <tbody *ngIf="!expression">
+                <tbody>
                   <tr *ngFor="let item of productList; index as i">
                     <td>{{ i + 1 }}</td>
                     <td>{{ item.proid }}</td>
                     <td>{{ item.proname }}</td>
                     <td>{{ item.proprice | currency }}</td>
+
                     <td>
-                      <button (click)="onEdit(i)" class="btn btn-warning">
-                        Edit
-                      </button>
+                      <button class="btn btn-warning">Edit</button>
                     </td>
                     <td>
-                      <button (click)="onDelete(i)" class="btn btn-danger">
+                      <button
+                        class="btn btn-danger"
+                        (click)="onDelete(item.userId)"
+                      >
                         X
                       </button>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <h5 *ngIf="expression" class="text-center">
+              <!-- <h5 class="text-center">
                 <div class="spinner-border text-primary"></div>
                 Fetching Data...
-              </h5>
+              </h5> -->
             </div>
           </div>
         </div>
