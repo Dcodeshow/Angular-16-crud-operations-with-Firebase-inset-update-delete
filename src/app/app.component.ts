@@ -18,6 +18,8 @@ export class AppComponent {
   myReactiveForm: FormGroup;
   productList: ProductModalInerface[] = [];
   Title: Observable<string> = this._myservice.productTitle();
+  editMode: boolean = false;
+  index: number;
 
   constructor(private _myservice: HttpserviceService) {
     this.myReactiveForm = new FormGroup({
@@ -28,9 +30,18 @@ export class AppComponent {
   }
 
   onSubmit(): void {
-    const newProduct = this.myReactiveForm.value;
-    this.productList.push(newProduct);
-    this._myservice.postData(newProduct).subscribe();
+    if (this.editMode) {
+      console.log(this.index);
+      const updatedProduct = this.myReactiveForm.value;
+      this._myservice.editData(this.index, updatedProduct).subscribe((val) => {
+        console.log(val);
+        this.getData();
+      });
+    } else {
+      const newProduct = this.myReactiveForm.value;
+      this.productList.push(newProduct);
+      this._myservice.postData(newProduct).subscribe();
+    }
   }
 
   getData() {
@@ -61,5 +72,16 @@ export class AppComponent {
       console.log(val);
     });
     this.getData();
+  }
+
+  onEdit(userId: any, index: any) {
+    console.log(this.productList[index].userId);
+    this.index = userId;
+    this.myReactiveForm.setValue({
+      proid: this.productList[index].proid,
+      proname: this.productList[index].proname,
+      proprice: this.productList[index].proprice,
+    });
+    this.editMode = true;
   }
 }

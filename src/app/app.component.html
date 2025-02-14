@@ -45,7 +45,8 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 mb-3">
-                  Save Product
+                  {{ editMode ? "Update" : "Add" }}
+                  Product
                 </button>
               </form>
             </div>
@@ -72,7 +73,9 @@
                     <td>{{ item.proprice | currency }}</td>
 
                     <td>
-                      <button class="btn btn-warning">Edit</button>
+                      <button class="btn btn-warning" (click)="onEdit(item.userId, i)">
+                        Edit
+                      </button>
                     </td>
                     <td>
                       <button

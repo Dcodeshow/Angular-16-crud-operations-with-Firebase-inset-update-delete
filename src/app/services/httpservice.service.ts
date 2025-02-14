@@ -31,4 +31,11 @@ export class HttpserviceService {
       `${this.url}/product/${userID}.json`
     );
   }
+
+  editData(userID: any, updatedProduct): Observable<any> {
+    return this.http.put<ProductModalInerface>(
+      `${this.url}/product/${userID}.json`,
+      updatedProduct
+    );
+  }
 }
